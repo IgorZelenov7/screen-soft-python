@@ -18,7 +18,7 @@ def screen():
 # Графический интерфейс
 root = Tk()
 root.title('Screen Soft')
-root.geometry('300x70')
+root.geometry('300x700')
 root.resizable(width=False, height=False)
 
 # Кнопка для создания скриншота
