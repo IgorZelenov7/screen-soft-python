@@ -1,12 +1,18 @@
 from pyautogui import screenshot
 from tkinter import *
 from tkinter import messagebox
+from datetime import datetime
 
 
 def screen():
-    img = screenshot() # Создаем скриншот
-    img.save(r'screen.png')  # Сохраняем скриншот
-    messagebox.showinfo('Alert', 'Screen Ready')  # Показываем сообщение
+    # Генерация уникального имени файла с текущей датой и временем
+    timestamp = datetime.now().strftime('%Y-%m-%d_%H-%M-%S')
+    filename = f'screen_{timestamp}.png'
+
+    # Создание скриншота
+    img = screenshot()
+    img.save(filename)
+    messagebox.showinfo('Ready', f'Screenshot saved as {filename}')
 
 
 # Графический интерфейс
